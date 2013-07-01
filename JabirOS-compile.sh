@@ -10,7 +10,7 @@
  echo "JabirOS Install Script"
  sleep 5
  cd /usr/src
- make-j5  buildworld buildkernel || echo "Building Failed"
+ make -j5 buildworld buildkernel || echo "Building Failed"
  sleep 5
  mkdir -v /tmp/JabirOS-Install
  export DESTDIR=/tmp/JabirOS-Install

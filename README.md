@@ -1,17 +1,30 @@
 # JabirOS compile script.
 
-You can use this script to compile JabirOS.
+## Script Options :
 
-How to use:
+* build 
+  this option, helps you to make a complete JabirOS system.
+* chroot
+  this option, helps you to do manual configs on your JabirOS system.
 
-Download the script from Repository , then :
+## How to use? 
 
-> chmod +x ./JabirOS-comile.sh
+##### How to build JabirOS??
 
-> ./JabirOS-compile.sh
+First, Install a 64-bit FreeBSD system. then download sources and follow these steps.
 
-## Building ISO images 
+> git clone https://github.com/prp-e/JabirOS-compile.git
 
-We'll release mkjiso script soon ;).
+Then , run script with "build" option 
 
+> sh JabirOS-compile.sh build
 
+##### How to do manual configs??
+
+You need to change your "root" folder to /tmp/JabirOS-Install. Just type :
+
+> sh JabirOS-compile chroot
+
+##### How to build ISO?
+
+this option will be added soon ;).

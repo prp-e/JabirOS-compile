@@ -7,6 +7,8 @@
 ##########################
 #  License : BSD         #
 ##########################
+case $1 in
+build)
  echo "JabirOS Install Script"
  sleep 5
  cd /usr/src
@@ -19,4 +21,8 @@
  make -j1 DESTDIR="$DESTDIR" -DWITHOUT_GCC  -DWITHOUT_LIB32  installworld distribution || echo "Install  World and make distribution failed"
  sleep 5
  echo "JabirOS is installed on /tmp/JabirOS-Install"
-
+;;
+chroot)
+    chroot $DESTIR /bin/sh
+;;
+esac

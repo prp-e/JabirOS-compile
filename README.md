@@ -2,9 +2,12 @@
 
 ## Script Options :
 
-* build 
+* build :
+ 
   this option, helps you to make a complete JabirOS system.
-* chroot
+
+* chroot :
+
   this option, helps you to do manual configs on your JabirOS system.
 
 ## How to use? 

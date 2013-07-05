@@ -9,16 +9,18 @@
 ##########################
 case $1 in
 build)
+ export TARGET=x86_64
+ export TARGET_ARCH=x86_64
  echo "JabirOS Install Script"
  sleep 5
  cd /usr/src
- make -j5 buildworld buildkernel || echo "Building Failed"
+ make -j5 TARGET=$TARGET TARGET_ARCH=$TARGET_ARCH buildworld buildkernel  || echo "Building Failed"
  sleep 5
  mkdir -v /tmp/JabirOS-Install
  export DESTDIR=/tmp/JabirOS-Install
- make -j1 DESTDIR="$DESTDIR" installkernel || echo "Install kernel Failed"
+ make -j1 DESTDIR="$DESTDIR" TARGET=$TARGET TARGET_ARCH=$TARGET_ARCH installkernel  || echo "Install kernel Failed"
  sleep 5
- make -j1 DESTDIR="$DESTDIR" -DWITHOUT_GCC  -DWITHOUT_LIB32  installworld distribution || echo "Install  World and make distribution failed"
+ make -j1 DESTDIR="$DESTDIR" -DWITHOUT_GCC  -DWITHOUT_LIB32 TARGET=$TARGET TARGET_ARCH=$TARGET_ARCH installworld distribution  || echo "Install  World and make distribution failed"
  sleep 5
  echo "JabirOS is installed on /tmp/JabirOS-Install"
 ;;

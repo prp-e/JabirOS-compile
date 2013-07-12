@@ -30,4 +30,6 @@ You need to change your "root" folder to /tmp/JabirOS-Install. Just type :
 
 ##### How to build ISO?
 
-this option will be added soon ;).
+You need to be root, after being root, just run this code:
+
+> sh JabirOS-compile.sh iso

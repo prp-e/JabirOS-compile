@@ -33,7 +33,8 @@ iso)
    echo $FSTAB > $DESTDIR/etc/fstab
    echo "loader.conf was created successful!"
    sleep 5
-   mkisofs -V JABIR_LIVE -b boot/cdboot -no-emul-boot -R -o $HOME/$USER/JabirOS-$VER-STABLE.iso $DESTDIR
+   mkisofs -V JABIR_LIVE -b boot/cdboot -no-emul-boot -R -o $HOME/$USER/JabirOS-$VER-STABLE.iso $DESTDIR || echo "Building ISO failed!"
+   echo "ISO created on your home directroy"
 
 ;;
 esac

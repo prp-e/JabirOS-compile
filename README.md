@@ -10,6 +10,9 @@
 
   this option, helps you to do manual configs on your JabirOS system.
 
+* iso :
+  this option will create a Live ISO of copmiled system
+
 ## How to use? 
 
 ##### How to build JabirOS??

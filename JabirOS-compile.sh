@@ -26,6 +26,7 @@ build)
 ;;
 chroot)
     chroot $DESTIR /bin/sh
+;;
 iso)
    export $VFS="cd9660:/dev/iso9660/JABIR_LIVE"
    export $FSTAB="/dev/iso9660/JABIR_LIVE  / ro 0 0"

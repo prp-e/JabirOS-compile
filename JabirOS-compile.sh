@@ -28,11 +28,8 @@ chroot)
     chroot $DESTIR /bin/sh
 ;;
 iso)
-   export $VFS="cd9660:/dev/iso9660/JABIR_LIVE"
-   export $FSTAB="/dev/iso9660/JABIR_LIVE  / ro 0 0"
-   echo  "vfs.root.mountfrom=\"$VFS" > $DESTDIR/boot/loader.conf
-   echo $FSTAB > $DESTDIR/etc/fstab
-   echo "loader.conf was created successful!"
+   cp -v loader.conf $DESTDIR/boot/loader.conf
+   cp -v fstab $DESTDIR/etc/fstab
    sleep 5
    mkisofs -V JABIR_LIVE -b boot/cdboot -no-emul-boot -R -o $HOME/$USER/JabirOS-$VER-STABLE.iso $DESTDIR || echo "Building ISO failed!"
    echo "ISO created on your home directroy"

@@ -11,7 +11,7 @@ case $1 in
 build)
  mkdir -v /tmp/JabirOS-Install
  export DESTDIR=/tmp/JabirOS-Install
- export VER=1
+ export VER=2.1
  export TARGET=amd64
  echo "JabirOS Install Script"
  sleep 5
@@ -28,7 +28,7 @@ chroot)
     chroot $DESTIR /bin/sh
 ;;
 iso)
-   cp -v loader.conf $DESTDIR/boot/loader.conf
+   #cp -v loader.conf $DESTDIR/boot/loader.conf
    cp -v fstab $DESTDIR/etc/fstab
    sleep 5
    mkisofs -V JABIR_LIVE -b boot/cdboot -no-emul-boot -R -o $HOME/$USER/JabirOS-$VER-STABLE.iso $DESTDIR || echo "Building ISO failed!"
